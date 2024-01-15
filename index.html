@@ -10,7 +10,8 @@
     <script type="text/javascript">
         function exploit() {
             history.pushState({ page: 1 }, "Exploit", "Hacker_page.html");
-            window.location.href = "example_of_vuln.html";
+            window.location.replace("example_of_vuln.html");
+            
         }
        exploit(); 
     </script>

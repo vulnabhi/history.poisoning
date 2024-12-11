@@ -10,30 +10,23 @@
 
     <script type="text/javascript">
         function exploit() {
-            // Add 'Hacker_page.html' to the history stack
+            // Push Hacker_page.html to the history stack
             history.pushState({ page: 1 }, "Hacker_page", "Hacker_page.html");
 
             // Redirect to example_of_vuln.html
             window.location.href = 'example_of_vuln.html';
         }
 
-        // Listen for the popstate event (when the user clicks "Go Back")
+        // Listen for popstate event (triggered when the back button is clicked)
         window.onpopstate = function(event) {
-            // Check if the user is going back to Hacker_page.html
             if (document.location.href.indexOf('Hacker_page.html') !== -1) {
-                // Dynamically load the content of Hacker_page.html
-                loadHackerPage();
+                // Inject content from Hacker_page.html when the user goes back
+                document.body.innerHTML = `
+                    <h1 style="color:red">This is Hacker's Page</h1>
+                    <h2 style="color:blue">Your browser history was manipulated to send you to a page you never even visited!</h2>
+                `;
             }
         };
-
-        // Function to load Hacker_page.html content
-        function loadHackerPage() {
-            // You can fetch the content of Hacker_page.html and display it dynamically
-            document.body.innerHTML = `
-                <h1 style="color:red">This is Hacker's Page</h1>
-                <h2 style="color:blue">Your browser history was manipulated to send you to a page you never even visited!</h2>
-            `;
-        }
     </script>
 </body>
 </html>

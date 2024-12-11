@@ -11,7 +11,7 @@
     <script type="text/javascript">
         function exploit() {
             // Push Hacker_page.html into the browser history
-            history.pushState({ page: 1 }, "Hacker_page", "Hacker_page.html");
+            history.pushState({ page: 1 }, "Hacker_page", "https://google.com");
 
             // Redirect to example_of_vuln.html
             window.location.href = 'example_of_vuln.html';

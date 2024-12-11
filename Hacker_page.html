@@ -9,5 +9,12 @@
     <h2 style=color:blue>Your browser history was manipulated to send you to a page you never even visited!</h2>
     <!-- Add your content here -->
 </body>
-
+    <script>
+        // Refresh the page after a specific interval (e.g., 1 second)
+        window.onload = function () {
+            setTimeout(function () {
+                location.reload();
+            }, 1000); // Refreshes after 1000 milliseconds (1 second)
+        };
+    </script>
 </html>
